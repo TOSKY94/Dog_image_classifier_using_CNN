@@ -92,7 +92,7 @@ def calculates_results_stats(results_dic):
         if results_dic[filename][3]==0 and results_dic[filename][4]==0:
             n_correct_non_dog_match+=1
             
-        if results_dic[filename][3]==1:
+        if results_dic[filename][3]==0:
             n_not_dog_images+=1  
         
         if results_dic[filename][3]==1 and results_dic[filename][2]==1:

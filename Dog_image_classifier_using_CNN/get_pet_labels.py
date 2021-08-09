@@ -46,16 +46,17 @@ def get_pet_labels(image_dir):
     results_dic={}
     
     for filename in filename_list:
-        low_filename=filename.lower()
-        word_list_filename=low_filename.split('_')
-        name=""
+        if not filename.startswith('.'):
+            low_filename=filename.lower()
+            word_list_filename=low_filename.split('_')
+            name=""
         
-        for word in word_list_filename:
-            if word.isalpha():
-                name += word +" "
-        name=name.strip()
-        
-        results_dic[filename]=[name]
+            for word in word_list_filename:
+                if word.isalpha():
+                    name += word +" "
+            name=name.strip()
+            
+            results_dic[filename]=[name]
        
     # Replace None with the results_dic dictionary that you created with this
     # function
